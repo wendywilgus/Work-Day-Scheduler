@@ -1,6 +1,7 @@
 var currentDate = moment().format("MMM Do, YYYY");
 var hour = moment().format('h'); 
-var time = document.querySelector('time')
+var time = document.querySelector('time');
+var timeText = "";
 
 // function to call date from Moment
 function displayDate()  {
@@ -12,22 +13,33 @@ function displayDate()  {
 // console.log(currentDate);
 displayDate();
 
-// console.log(time.innerHTML);
+var scheduleArray = [];
+$('time').each(function ()  {
+    var id = $(this).attr('id');
+    scheduleArray.push(id);
+});
+// console.log(scheduleArray);
 
 function compareHour()  {
-    var hour = moment();$("#time").text;
-    var time = $(this).attr('time').substr(5);
-
-    if (time.innerHTML < hour)    {
-        $(this).addClass(".past");
-    }   else if (time.innerHTML === hour)  {
-    $(this).addClass(".present");
-    }   else  {
-        $(this).addClass(".future");
-    }
+    var hour = moment();$("#time").text
 }
+// }
 
-compareHour();
+// $(".form-control").each(function () {
+//     var timeTest = parseInt($(this).attr("id"));
+//     hour = parseInt(hour);
+    // console.log(timeTest);
+    // console.log(hour);
+    //  console.log(this);
+    // if (hour > timeTest) {
+    //     $(this).addClass("past");
+    // } else if (hour < timeTest) {
+    //     $(this).addClass("future");
+    // } else {
+    //     $(this).addClass("present");
+    // }
+// })
 
-console.log(time);
-console.log(hour);
+
+// console.log(time);
+// console.log(hour)
