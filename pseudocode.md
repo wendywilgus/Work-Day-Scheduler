@@ -28,6 +28,8 @@ thick black line separates header from scheduler
         red = current
         green = future
 
+    Compare moment hour to 
+
 5. click on a time block to enter an event
     add event and text
 
