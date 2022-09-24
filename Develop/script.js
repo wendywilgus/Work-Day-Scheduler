@@ -8,18 +8,18 @@ console.log("todaysDate", todaysDate);
 
 const dateElement = document.getElementById("currentDate");
 dateElement.innerHTML = `Today is ${todaysDate}`;
+var note = " ";
 
 //Array to build schedule components.  Uses moment to display the hours. 
 var scheduleArray = [];
-for(var i = 0; i < 24; i++) {
+for(var i = 0; i <24; i++) {
   scheduleArray.push({
     index: i,
-    note: `sample text ${i}`,
+    note: "",
     time: moment(Date.now()).startOf('day').add(i, 'hours'),
     timeDisplay: moment(Date.now()).startOf('day').add(i, 'hours').format('h a')
   })
 }
-
 
 const containerElement = document.getElementById("container");
 scheduleArray.map((item) => {
@@ -41,11 +41,15 @@ scheduleArray.map((item) => {
   } else {
     newDivNote.className = `col-8 border present`;
   }
- 
 
   newDivNote.id = `textarea-${item.index}`;
   newDivNote.innerHTML = item.note;
   newDivRow.appendChild(newDivNote);
+
+  newDivNote.addEventListener("keyup", event => {
+    localStorage.setItem("notes", event.target.value);
+  })
+
 
   //insert icon for save button
   const newIcon = document.createElement("i");
@@ -76,8 +80,11 @@ function handleButtonClick (index, value) {
   }
 
   //function to save user Events when page is refreshed
-function saveEvents(event)  {
-    event.preventDefault();
-    handleButtonClick();
-    localStorage.setItem(textarea.textContent);
-}
+// function saveEvents()  {
+    
+//     let stored = JSON.parse(localStorage.getItem(value));
+//     console.log(stored);
+//     localStorage.setItem(stored);
+// }
+
+// handleButtonClick(saveEvents());
