@@ -1,56 +1,83 @@
-var now = moment(Date.now);
-var hour = moment(Date.now()).startOf('day');
-console.log("startOfDay", hour.format('h a'));
-console.log(now);
+
+var currentTime = moment(Date.now()); //tells date
+var startOfDay = moment(Date.now()).startOf('day'); // start at 12am
+console.log("startOfDay", startOfDay.format('h a'));
 
 var todaysDate = moment().format("MMMM Do, YYYY");
 console.log("todaysDate", todaysDate);
 
-var time = document.querySelector("time");
-var textarea = document.querySelector("textarea");
-var button = document.querySelector("button");
-
 const dateElement = document.getElementById("currentDate");
 dateElement.innerHTML = `Today is ${todaysDate}`;
 
+//Array to build schedule components.  Uses moment to display the hours. 
 var scheduleArray = [];
-$('textarea').each(function ()  {
-    var id = $(this).attr('id');
-    scheduleArray.push(id);
-});
-console.log(scheduleArray);
-
-
-
-
-function init() {
-    window.localStorage.getElementById("textarea");
-    var time = moment($(e).attr("datetime"));
-if(now.diff(time, 'days') <= 1) {
-    // getting the relative output
-}
-console.log(time);
-var ago = now.from(time)
-console.log(ago);
+for(var i = 0; i < 24; i++) {
+  scheduleArray.push({
+    index: i,
+    note: `sample text ${i}`,
+    time: moment(Date.now()).startOf('day').add(i, 'hours'),
+    timeDisplay: moment(Date.now()).startOf('day').add(i, 'hours').format('h a')
+  })
 }
 
 
+const containerElement = document.getElementById("container");
+scheduleArray.map((item) => {
+  const newDivRow = document.createElement("div");
+  newDivRow.className = "row d-flex flex-row";
+  newDivRow.id = "time-block";
 
-function compareHour()  {
-    
-    // for ( i = 0; i < scheduleArray.length; i++)  {
-    //         scheduleArray[i].removeClass("past present future");
-    
-    if (hour > scheduleArray[i].data("hour")) {
-        scheduleArray[i].setAttribute(".past");
-    }
-}
+  const newDivTime = document.createElement("time");
+  newDivTime.className = "col-2 border";
+  newDivTime.id = `${item.index}`;
+  newDivTime.innerHTML = item.time.format('h a');
+  newDivRow.appendChild(newDivTime);
+
+  const newDivNote = document.createElement("TEXTAREA");
+  if(currentTime < item.time) {
+    newDivNote.className = `col-8 border future`;
+  } else if(currentTime > item.time.add(1, "hours")) {
+    newDivNote.className = `col-8 border past`;
+  } else {
+    newDivNote.className = `col-8 border present`;
+  }
+ 
+
+  newDivNote.id = `textarea-${item.index}`;
+  newDivNote.innerHTML = item.note;
+  newDivRow.appendChild(newDivNote);
+
+  //insert icon for save button
+  const newIcon = document.createElement("i");
+  newIcon.className = "fa fa-floppy-o";
+
+  const newButton = document.createElement("button");
+  newButton.className = "col-2 border fa-lg";
+  newButton.appendChild(newIcon);
+  newButton.onclick = function () {
+    const value = document.getElementById(`textarea-${item.index}`).value;
+    handleButtonClick(item.index, value);
+  };
+  newDivRow.appendChild(newButton);
+
+//function to only call hours of working day
+  if(item.index > 8 && item.index < 18){ 
+    containerElement.appendChild(newDivRow);
+  }
+})
+// console.log("scheduleArray", scheduleArray);
 
 
-//function to save user Events when page is refreshed
+
+
+//button click
+function handleButtonClick (index, value) {
+    console.log(`Button ${index} is clicked with value ${value}`);
+  }
+
+  //function to save user Events when page is refreshed
 function saveEvents(event)  {
     event.preventDefault();
+    handleButtonClick();
     localStorage.setItem(textarea.textContent);
 }
-
-button.addEventListener("click", saveEvents);

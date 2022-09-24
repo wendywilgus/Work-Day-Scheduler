@@ -69,7 +69,7 @@ button  {
   background-color: #0DC2DE;
   display: flex;
   justify-content: center;  /* Align Horizontally */
-  align-items: center; 
+  align-items: center;
   vertical-align: center;
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
