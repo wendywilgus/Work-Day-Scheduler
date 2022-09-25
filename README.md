@@ -1,14 +1,27 @@
 # 05 Third-Party APIs: Work Day Scheduler
 
-## Your Task
+Module 5 Assignment
 
-Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+## Description
+The purpose of this project is to create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery. I have used the [Moment.js](https://momentjs.com/) library to work with date and time.  This app is designed to run in the browser and features dynamically updated HTML and CSS powered by JavaScript code. It has a clean and polished, responsive user interface that adapts to multiple screen sizes.
 
-You'll need to use the [Moment.js](https://momentjs.com/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Moment.js in the browser.
+Solving the problems of this project taught me to understand better the how to implement Moment.js to call the current date and time.  I also learned how to save user input upon refresh using events and local storage. 
 
-## User Story
+Link to deployed site here: https://wendywilgus.github.io/Work-Day-Scheduler/
 
-```md
+## Table of Contents
+
+- [Story](#user-story)
+- [Mockup](#mockup) 
+- [Languages Used](#languages)
+- [Credits](#credits)
+- [Resources](#resources)
+
+
+```
+## User Story 
+
+```
 AS AN employee with a busy schedule
 I WANT to add important events to a daily planner
 SO THAT I can manage my time effectively
@@ -16,7 +29,7 @@ SO THAT I can manage my time effectively
 
 ## Acceptance Criteria
 
-```md
+```
 GIVEN I am using a daily planner to create a schedule
 WHEN I open the planner
 THEN the current day is displayed at the top of the calendar
@@ -32,68 +45,48 @@ WHEN I refresh the page
 THEN the saved events persist
 ```
 
+## Mock-Up
+
 The following animation demonstrates the application functionality:
 
 ![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/05-third-party-apis-homework-demo.gif)
 
+## Languages Used
+The following languages were used to create this project:
 
-## Grading Requirements
+-HTML
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+-CSS
 
-This Challenge is graded based on the following criteria: 
+-JavaScript
 
-### Technical Acceptance Criteria: 40%
 
-* Satisfies all of the above acceptance criteria plus the following:
 
-  * Uses a date utility library to work with date and time
 
-### Deployment: 32%
+## Credits
 
-* Application deployed at live URL
-
-* Application loads with no errors
-
-* Application GitHub URL submitted
-
-* GitHub repo contains application code
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate
-
-* Application user interface style is clean and polished
-
-* Application resembles the mock-up functionality provided in the Challenge instructions
-
-### Repository Quality: 13%
-
-* Repository has a unique name
-
-* Repository follows best practices for file structure and naming conventions
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages
-
-* Repository contains quality README file with description, screenshot, and link to deployed application
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository, with a unique name and a README describing the project
-
-- - -
+This project was completed as part of Georgia Tech's Full Stack Development Boot Camp course. 
 © 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+
+
+## Resources
+
+The following resources were helpful in researching best practices and problem-solving on the project.
+
+- Moment.js https://medium.com/@thejasonfile/a-moment-with-moment-js-c5d097d2b61c
+-Event Listeners https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+-Local Storage https://egghead.io/lessons/javascript-avoid-losing-text-when-refreshing-the-browser-with-localstorage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
