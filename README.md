@@ -18,18 +18,16 @@ Link to deployed site here: https://wendywilgus.github.io/Work-Day-Scheduler/
 - [Resources](#resources)
 
 
-```
+
 ## User Story 
 
-```
 AS AN employee with a busy schedule
 I WANT to add important events to a daily planner
 SO THAT I can manage my time effectively
-```
+
 
 ## Acceptance Criteria
 
-```
 GIVEN I am using a daily planner to create a schedule
 WHEN I open the planner
 THEN the current day is displayed at the top of the calendar
@@ -43,13 +41,14 @@ WHEN I click the save button for that timeblock
 THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
-```
+
 
 ## Mock-Up
 
-The following animation demonstrates the application functionality:
+The following screenshots demonstrate the application functionality:
 
-![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/05-third-party-apis-homework-demo.gif)
+![Screenshot](./Assets/mockup1.png)
+![Screenshot2](./Assets/mockup2.png)
 
 ## Languages Used
 The following languages were used to create this project:
